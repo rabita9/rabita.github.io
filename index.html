@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozen Yogurt Shop</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
+    <script src="js/mobile.js" type="text/javascript"></script>
+
+    <style>
+        /* Popup CSS */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(237, 244, 156, 0.3);
+        }
+
+        /* Contact Form Styling */
+        #contact {
+            background-color: #f9f9f9;
+            padding: 40px;
+            margin: 50px auto;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        #contact label {
+            display: block;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #fff;
+        }
+
+        #contact button {
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #contact button:hover {
+            background-color: #45a049;
+        }
+
+        .form-message {
+            font-size: 1.2rem;
+            text-align: center;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="page">
+        <div id="header">
+            <div>
+                <a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
+                <ul id="navigation">
+                    <li class="selected">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu">
+                        <a href="about.html">About</a>
+                        <ul class="primary">
+                            <li>
+                                <a href="product.html">Product</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu">
+                        <a href="blog.html">Blog</a>
+                        <ul class="secondary">
+                            <li>
+                                <a href="singlepost.html">Single post</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="body" class="home">
+            <div class="header">
+                <img src="images/bg-home.jpg" alt="">
+                <div>
+                    <a href="product.html">Freeze Delight</a>
+                </div>
+            </div>
+
+            <div class="body">
+                <div>
+                    <div>
+                        <h1>NEW PROJECT</h1>
+                        <h2>The changes made for the website</h2>
+                        <p> 1. A welcome message if you click at the website.
+                            2. A contact form for Java Script.
+                            3. Background colour, font and margin modification for CSS.
+                            4. Name and Student ID in Footer.
+                        </Script> </p>
+                    </div>
+                    <img src="images/yogurt.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="footer">
+                <div>
+                    <ul>
+                        <li>
+                            <a href="product.html" class="product"></a>
+                            <h1>PRODUCTS</h1>
+                        </li>
+                        <li>
+                            <a href="about.html" class="about"></a>
+                            <h1>OUR STORY</h1>
+                        </li>
+                        <li>
+                            <a href="product.html" class="flavor"></a>
+                            <h1>FLAVORS</h1>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="contact"></a>
+                            <h1>OUR LOCATION</h1>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="footer-content">
+                <div class="connect">
+                    <a href="http://freewebsitetemplates.com/go/facebook/" class="facebook" aria-label="Facebook">facebook</a>
+                    <a href="http://freewebsitetemplates.com/go/twitter/" class="twitter" aria-label="Twitter">twitter</a>
+                    <a href="http://freewebsitetemplates.com/go/googleplus/" class="googleplus" aria-label="Google+">googleplus</a>
+                    <a href="http://pinterest.com/fwtemplates/" class="pinterest" aria-label="Pinterest">pinterest</a>
+                </div>
+                <p>&copy; Mim Rabita Jahan 24224537</p>
+            </div>
+        </div>
+
+        <div id="popup">
+            <h2>Welcome to Freeeze!</h2>
+            <p>Enjoy our delicious and healthy frozen yogurt.</p>
+            <button id="closePopup">Close</button>
+        </div>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="https://formspree.io/f/your-email@example.com" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                <button type="submit">Submit</button>
+                <p class="form-message">Your message has been sent successfully!</p>
+            </form>
+        </section>
+
+    </div>
+
+    <script>
+        // Show the popup on page load
+        window.onload = function () {
+            document.getElementById('popup').style.display = 'block';
+        };
+
+        // Close the popup when the button is clicked
+        document.getElementById('closePopup').onclick = function () {
+            document.getElementById('popup').style.display = 'none';
+        };
+
+        // Optional: Display success message on form submission
+        const form = document.getElementById('contactForm');
+        const message = document.querySelector('.form-message');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            message.style.display = 'block';
+            form.reset(); // Reset form after submission
+        });
+    </script>
+
+</body>
+
+</html>
